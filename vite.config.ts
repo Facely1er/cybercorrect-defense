@@ -20,7 +20,9 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true
+    host: true,
+    // Handle SPA routing - always serve index.html for non-asset requests
+    middlewareMode: false
   },
   preview: {
     port: 4173,
