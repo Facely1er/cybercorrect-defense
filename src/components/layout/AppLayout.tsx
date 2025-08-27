@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner';
 import { 
   LayoutDashboard,
   Shield,

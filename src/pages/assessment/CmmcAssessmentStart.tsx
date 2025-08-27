@@ -8,7 +8,8 @@ import {
   Users, 
   Target, 
   Clock,
-  Info
+  Info,
+  FileCheck
 } from 'lucide-react';
 
 const CmmcAssessmentStart = () => {
