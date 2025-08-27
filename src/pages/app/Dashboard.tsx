@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { 
   Shield, 
   Target, 
-  CheckCircle, 
   AlertTriangle, 
-  Clock, 
   Users, 
-  BarChart3, 
   FileCheck, 
   ArrowRight,
-  TrendingUp,
   Award,
   Calendar,
   Activity
@@ -21,8 +17,7 @@ import { useProject } from '../../context/ProjectContext';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
-  const { currentProject, teamMembers, userRole } = useTeam();
-  const { milestones, tasks } = useProject();
+  const { currentProject, teamMembers } = useTeam();
   
   // Mock compliance data - in real app this would come from assessment results
   const complianceData = {

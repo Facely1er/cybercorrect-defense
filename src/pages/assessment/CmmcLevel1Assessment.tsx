@@ -7,11 +7,9 @@ import {
   ArrowRight, 
   CheckCircle, 
   AlertTriangle, 
-  Shield,
   Clock,
   Info
 } from 'lucide-react';
-import { toast } from '../../components/ui/Toaster';
 import { Link } from 'react-router-dom';
 
 const CmmcLevel1Assessment = () => {

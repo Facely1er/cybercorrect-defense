@@ -7,7 +7,7 @@ import {
   ArrowRight, 
   CheckCircle, 
   AlertTriangle, 
-  Shield,
+
   Clock,
   Info
 } from 'lucide-react';

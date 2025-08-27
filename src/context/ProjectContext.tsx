@@ -174,7 +174,7 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
     });
     
     // Control family level
-    controlFamilies.forEach((family, index) => {
+    controlFamilies.forEach((family) => {
       const familyId = `wbs-${family.replace(/\s+/g, '-').toLowerCase()}`;
       wbsItems.push({
         id: familyId,

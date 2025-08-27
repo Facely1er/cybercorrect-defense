@@ -49,7 +49,7 @@ export const TeamProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [currentProject, setCurrentProjectState] = useState<TeamProject | null>(null);
   const [projects, setProjects] = useState<TeamProject[]>([]);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [userRole, setUserRole] = useState<string>('project_manager');
+  const [userRole] = useState<string>('project_manager');
 
   useEffect(() => {
     // Load team data from localStorage or API

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { TeamProvider } from './context/TeamContext';
 import { ProjectProvider } from './context/ProjectContext';
 import { Toaster } from './components/ui/Toaster';
 import ErrorBoundary from './components/ErrorBoundary';
-import LoadingSpinner from './components/LoadingSpinner';
+
 import LandingLayout from './components/layout/LandingLayout';
 import AppLayout from './components/layout/AppLayout';
 import DevTools from './components/DevTools';

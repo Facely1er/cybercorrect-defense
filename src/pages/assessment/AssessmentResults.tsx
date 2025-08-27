@@ -3,22 +3,18 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { 
-  Shield, 
   CheckCircle, 
-  AlertTriangle, 
   Download, 
   ArrowRight,
   Target,
-  Users,
-  FileText,
-  BarChart3
+  Users
 } from 'lucide-react';
 import { generateResultsPdf } from '../../utils/generatePdf';
 
 const AssessmentResults = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { type, score, level1Ready, mode, responses, level } = location.state || {};
+  const { score, mode, responses, level } = location.state || {};
 
   // Calculate results based on responses
   const calculateDetailedResults = () => {

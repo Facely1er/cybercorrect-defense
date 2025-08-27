@@ -3,14 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { 
-  Shield, 
   ArrowRight, 
   CheckCircle, 
   Users, 
   Target, 
   Clock,
-  Award,
-  Building,
   Info
 } from 'lucide-react';
 

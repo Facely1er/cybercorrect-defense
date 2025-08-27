@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
+import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { 
   FileText, 
@@ -8,11 +8,9 @@ import {
   Target, 
   CheckCircle,
   FileCheck,
-  Settings,
   Plus,
   Eye,
   Edit,
-  Calendar,
   BarChart3
 } from 'lucide-react';
 import { toast } from '../../components/ui/Toaster';
@@ -110,7 +108,7 @@ const DocumentGeneration = () => {
     }
   };
 
-  const handleGenerateDocument = (templateId: string) => {
+  const handleGenerateDocument = (_templateId: string) => {
     toast.success('Document generation started', 'Your document is being generated...');
     
     setTimeout(() => {
@@ -239,7 +237,7 @@ const DocumentGeneration = () => {
           {tabs.map(tab => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id as 'templates' | 'generated' | 'policies')}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors flex items-center ${
                 activeTab === tab.id
                   ? 'border-blue-500 text-blue-600'
