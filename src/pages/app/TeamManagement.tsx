@@ -15,8 +15,8 @@ import {
   Trash2,
   Plus
 } from 'lucide-react';
-import { useTeam } from '../../context/TeamContext';
-import { toast } from '../../components/ui/Toaster';
+import { useTeam } from '../../hooks/useTeam';
+import { toast } from '../../lib/toast';
 
 const TeamManagement = () => {
   const { teamMembers, inviteMembers, currentProject } = useTeam();

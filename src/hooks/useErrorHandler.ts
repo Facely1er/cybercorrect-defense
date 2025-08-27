@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { toast } from '../components/ui/Toaster';
+import { toast } from '../lib/toast';
 
 interface ErrorState {
   error: Error | null;

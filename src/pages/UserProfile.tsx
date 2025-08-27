@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { useAuth } from '../context/AuthContext';
-import { toast } from '../components/ui/Toaster';
+import { useAuth } from '../hooks/useAuth';
+import { toast } from '../lib/toast';
 import { 
   User, 
   Mail, 

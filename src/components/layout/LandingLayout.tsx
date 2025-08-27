@@ -19,7 +19,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import { Button } from '../ui/Button';
 import Logo from '../ui/Logo';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 
 interface LandingLayoutProps {
   toggleDarkMode: () => void;

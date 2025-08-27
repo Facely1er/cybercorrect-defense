@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Lock } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../hooks/useAuth';
 import { Button } from '../components/ui/Button';
-import { toast } from '../components/ui/Toaster';
+import { toast } from '../lib/toast';
 import Logo from '../components/ui/Logo';
 
 const Login = () => {

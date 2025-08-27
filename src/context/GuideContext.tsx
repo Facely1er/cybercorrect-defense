@@ -1,30 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-
-interface GuideProgress {
-  id: string;
-  completed: string[];
-  lastVisited: string;
-  startedAt: string;
-  completedAt?: string;
-}
-
-interface GuideContextType {
-  progress: Record<string, GuideProgress>;
-  markSectionComplete: (guideId: string, sectionId: string) => void;
-  updateLastVisited: (guideId: string, sectionId: string) => void;
-  getGuideProgress: (guideId: string) => number;
-  getSectionProgress: (guideId: string, sectionId: string) => boolean;
-}
-
-const GuideContext = createContext<GuideContextType | undefined>(undefined);
-
-export const useGuide = () => {
-  const context = useContext(GuideContext);
-  if (context === undefined) {
-    throw new Error('useGuide must be used within a GuideProvider');
-  }
-  return context;
-};
+import React, { useState, useEffect } from 'react';
+import { GuideContext, type GuideProgress } from './contexts';
 
 export const GuideProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [progress, setProgress] = useState<Record<string, GuideProgress>>(() => {

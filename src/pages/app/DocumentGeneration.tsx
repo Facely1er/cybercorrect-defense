@@ -15,7 +15,7 @@ import {
   Calendar,
   BarChart3
 } from 'lucide-react';
-import { toast } from '../../components/ui/Toaster';
+import { toast } from '../../lib/toast';
 
 interface DocumentTemplate {
   id: string;

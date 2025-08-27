@@ -22,8 +22,8 @@ import {
   AlertTriangle,
   BarChart2
 } from 'lucide-react';
-import { toast } from '../components/ui/Toaster';
-import { useChatbot } from '../components/chat/ChatbotProvider';
+import { toast } from '../lib/toast';
+import { useChatbot } from '../hooks/useChatbot';
 
 // Import demo components
 import AssessmentDemo from '../components/demo/AssessmentDemo';

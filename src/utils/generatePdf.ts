@@ -1,10 +1,37 @@
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 
+interface AutoTableOptions {
+  head?: string[][];
+  body?: string[][];
+  startY?: number;
+  headStyles?: {
+    fillColor?: number[];
+    textColor?: number[];
+    fontSize?: number;
+  };
+  alternateRowStyles?: {
+    fillColor?: number[];
+  };
+  columnStyles?: Record<number, {
+    cellWidth?: number | 'auto';
+    halign?: 'left' | 'center' | 'right';
+  }>;
+  margin?: {
+    top?: number;
+    right?: number;
+    bottom?: number;
+    left?: number;
+  };
+}
+
 // Extend jsPDF with autotable plugin
 declare module 'jspdf' {
   interface jsPDF {
-    autoTable: (options: any) => jsPDF;
+    autoTable: (options: AutoTableOptions) => jsPDF;
+    lastAutoTable?: {
+      finalY: number;
+    };
   }
 }
 
@@ -85,7 +112,7 @@ export const generateResultsPdf = (
     alternateRowStyles: { fillColor: [240, 240, 240] }
   });
   
-  y = (doc as any).lastAutoTable.finalY + 20;
+  y = doc.lastAutoTable?.finalY ? doc.lastAutoTable.finalY + 20 : y + 20;
 
   // Add summary
   doc.setFontSize(14);

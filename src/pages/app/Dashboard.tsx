@@ -16,8 +16,8 @@ import {
   Calendar,
   Activity
 } from 'lucide-react';
-import { useTeam } from '../../context/TeamContext';
-import { useProject } from '../../context/ProjectContext';
+import { useTeam } from '../../hooks/useTeam';
+import { useProject } from '../../hooks/useProject';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {

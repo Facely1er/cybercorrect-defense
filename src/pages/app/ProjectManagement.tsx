@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Calendar, Target, BarChart3, Users, Clock, CheckCircle, AlertTriangle, Plus, Filter, ArrowRight, GanttChart as Gantt, Network, FileCheck, Settings } from 'lucide-react';
-import { useProject } from '../../context/ProjectContext';
+import { useProject } from '../../hooks/useProject';
 
 const ProjectManagement = () => {
   const [activeTab, setActiveTab] = useState<'roadmap' | 'milestones' | 'tasks' | 'raci' | 'wbs'>('roadmap');

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { toast, subscribeToToasts, type ToastData } from '../../lib/toast';
 
 type ToastProps = {
   id: string;
@@ -65,60 +66,17 @@ const Toast: React.FC<ToastProps> = ({
   );
 };
 
-type ToastData = {
-  id: string;
-  title: string;
-  description?: string;
-  type?: 'default' | 'success' | 'error' | 'warning' | 'info';
-  duration?: number;
-};
 
-// Global toast state management
-let toasts: ToastData[] = [];
-let listeners: ((toasts: ToastData[]) => void)[] = [];
-
-const notifyListeners = () => {
-  listeners.forEach(listener => listener([...toasts]));
-};
-
-export const toast = {
-  show: (data: Omit<ToastData, 'id'>) => {
-    const id = `toast-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-    const newToast = { id, ...data };
-    toasts.push(newToast);
-    notifyListeners();
-    return id;
-  },
-  dismiss: (id: string) => {
-    toasts = toasts.filter(t => t.id !== id);
-    notifyListeners();
-  },
-  success: (title: string, description?: string, duration?: number) => {
-    return toast.show({ title, description, type: 'success', duration });
-  },
-  error: (title: string, description?: string, duration?: number) => {
-    return toast.show({ title, description, type: 'error', duration });
-  },
-  warning: (title: string, description?: string, duration?: number) => {
-    return toast.show({ title, description, type: 'warning', duration });
-  },
-  info: (title: string, description?: string, duration?: number) => {
-    return toast.show({ title, description, type: 'info', duration });
-  }
-};
 
 export const Toaster: React.FC = () => {
   const [localToasts, setLocalToasts] = useState<ToastData[]>([]);
 
   useEffect(() => {
-    const listener = (updatedToasts: ToastData[]) => {
+    const unsubscribe = subscribeToToasts((updatedToasts: ToastData[]) => {
       setLocalToasts(updatedToasts);
-    };
+    });
     
-    listeners.push(listener);
-    return () => {
-      listeners = listeners.filter(l => l !== listener);
-    };
+    return unsubscribe;
   }, []);
 
   const handleClose = (id: string) => {

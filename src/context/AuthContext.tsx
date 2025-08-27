@@ -1,23 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { User } from '../types';
-
-interface AuthContextType {
-  user: User | null;
-  loading: boolean;
-  login: (email: string, password: string) => Promise<User>;
-  logout: () => void;
-  error: string | null;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
+import { AuthContext } from './contexts';
 
 // Mock user data
 const mockUsers: User[] = [
@@ -64,6 +47,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       
       // In a real app, we would validate the password here
+      // For demo purposes, we check if password is not empty
+      if (!password || password.length < 1) {
+        throw new Error('Password is required');
+      }
       
       setUser(foundUser);
       localStorage.setItem('user', JSON.stringify(foundUser));

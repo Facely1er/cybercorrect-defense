@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { Asset } from '../types';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -45,7 +46,7 @@ export const getAssets = async () => {
   return { data, error };
 };
 
-export const createAsset = async (asset: any) => {
+export const createAsset = async (asset: Omit<Asset, 'id' | 'created_at' | 'updated_at'>) => {
   const { data, error } = await supabase
     .from('assets')
     .insert([asset])
@@ -53,7 +54,7 @@ export const createAsset = async (asset: any) => {
   return { data, error };
 };
 
-export const updateAsset = async (id: string, updates: any) => {
+export const updateAsset = async (id: string, updates: Partial<Asset>) => {
   const { data, error } = await supabase
     .from('assets')
     .update(updates)

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 interface ProjectMilestone {
   id: string;
@@ -71,15 +71,7 @@ interface ProjectContextType {
   generateWBS: (controls: string[]) => void;
 }
 
-const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
-
-export const useProject = () => {
-  const context = useContext(ProjectContext);
-  if (context === undefined) {
-    throw new Error('useProject must be used within a ProjectProvider');
-  }
-  return context;
-};
+export const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
 
 export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [milestones, setMilestones] = useState<ProjectMilestone[]>([]);
@@ -174,7 +166,7 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
     });
     
     // Control family level
-    controlFamilies.forEach((family, index) => {
+    controlFamilies.forEach((family) => {
       const familyId = `wbs-${family.replace(/\s+/g, '-').toLowerCase()}`;
       wbsItems.push({
         id: familyId,

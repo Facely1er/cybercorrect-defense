@@ -30,7 +30,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from '../components/ui/Toaster';
+import { toast } from '../lib/toast';
 
 const About = () => {
   const navigate = useNavigate();

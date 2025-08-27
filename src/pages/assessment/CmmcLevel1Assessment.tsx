@@ -11,7 +11,7 @@ import {
   Clock,
   Info
 } from 'lucide-react';
-import { toast } from '../../components/ui/Toaster';
+import { toast } from '../../lib/toast';
 import { Link } from 'react-router-dom';
 
 const CmmcLevel1Assessment = () => {

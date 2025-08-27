@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode } from 'react';
 
 interface ChatbotContextType {
   isOpen: boolean;
@@ -7,15 +7,7 @@ interface ChatbotContextType {
   toggleChatbot: () => void;
 }
 
-const ChatbotContext = createContext<ChatbotContextType | undefined>(undefined);
-
-export const useChatbot = () => {
-  const context = useContext(ChatbotContext);
-  if (context === undefined) {
-    throw new Error('useChatbot must be used within a ChatbotProvider');
-  }
-  return context;
-};
+export const ChatbotContext = createContext<ChatbotContextType | undefined>(undefined);
 
 interface ChatbotProviderProps {
   children: ReactNode;

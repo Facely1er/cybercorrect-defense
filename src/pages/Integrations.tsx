@@ -3,7 +3,7 @@ import { Card, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { ArrowLeft, ArrowRight, Link2, Check, ExternalLink, Plug, Cloud, Lock, Shield, AlertTriangle, Server, Database, Settings, HelpCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from '../components/ui/Toaster';
+import { toast } from '../lib/toast';
 
 const Integrations = () => {
   const navigate = useNavigate();

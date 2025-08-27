@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 interface TeamMember {
   id: string;
@@ -35,21 +35,13 @@ interface TeamContextType {
   setCurrentProject: (projectId: string) => void;
 }
 
-const TeamContext = createContext<TeamContextType | undefined>(undefined);
-
-export const useTeam = () => {
-  const context = useContext(TeamContext);
-  if (context === undefined) {
-    throw new Error('useTeam must be used within a TeamProvider');
-  }
-  return context;
-};
+export const TeamContext = createContext<TeamContextType | undefined>(undefined);
 
 export const TeamProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentProject, setCurrentProjectState] = useState<TeamProject | null>(null);
   const [projects, setProjects] = useState<TeamProject[]>([]);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [userRole, setUserRole] = useState<string>('project_manager');
+  const [userRole] = useState<string>('project_manager');
 
   useEffect(() => {
     // Load team data from localStorage or API
