@@ -6,13 +6,11 @@ import {
   FolderOpen,
   Users,
   FileText,
-  Settings,
   Menu,
   X,
   Bell,
   Search,
   User,
-  LogOut,
   Moon,
   Sun
 } from 'lucide-react';
@@ -27,7 +25,7 @@ interface AppLayoutProps {
 
 const AppLayout: React.FC<AppLayoutProps> = ({ toggleDarkMode, darkMode }) => {
   const location = useLocation();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const { currentProject, teamMembers } = useTeam();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

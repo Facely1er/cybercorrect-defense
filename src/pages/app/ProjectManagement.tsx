@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
+import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { Calendar, Target, BarChart3, Users, Clock, CheckCircle, AlertTriangle, Plus, Filter, ArrowRight, GanttChart as Gantt, Network, FileCheck, Settings } from 'lucide-react';
+import { Calendar, Target, BarChart3, CheckCircle, AlertTriangle, Plus, ArrowRight, GanttChart as Gantt, Network } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
 
 const ProjectManagement = () => {
   const [activeTab, setActiveTab] = useState<'roadmap' | 'milestones' | 'tasks' | 'raci' | 'wbs'>('roadmap');
-  const { milestones, tasks, roadmap, raciMatrix, wbs } = useProject();
+  const { roadmap } = useProject();
 
   // Mock project data
   const projectPhases = [
@@ -228,7 +228,7 @@ const ProjectManagement = () => {
           {tabs.map(tab => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id as 'roadmap' | 'milestones' | 'tasks' | 'raci' | 'wbs')}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors flex items-center ${
                 activeTab === tab.id
                   ? 'border-blue-500 text-blue-600'

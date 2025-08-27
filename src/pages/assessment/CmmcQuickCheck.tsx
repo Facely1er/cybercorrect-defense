@@ -87,7 +87,7 @@ const CmmcQuickCheck = () => {
     const score = Math.round((yesCount / totalQuestions) * 100);
     
     let level1Ready = false;
-    let recommendations = [];
+    const recommendations = [];
     
     if (score >= 90) {
       level1Ready = true;

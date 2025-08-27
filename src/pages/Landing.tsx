@@ -8,19 +8,16 @@ import {
   Shield, 
   Award,
   Target,
-  Clock,
   Users,
-  Building,
   BarChart3,
   FileCheck,
   Database,
-  Settings,
-  Zap,
+
   Globe
 } from 'lucide-react';
 
 const Landing = () => {
-  const navigate = useNavigate();
+
 
   const userPaths = [
     {

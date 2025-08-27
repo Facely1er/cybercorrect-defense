@@ -45,7 +45,7 @@ export const getAssets = async () => {
   return { data, error };
 };
 
-export const createAsset = async (asset: any) => {
+export const createAsset = async (asset: Record<string, unknown>) => {
   const { data, error } = await supabase
     .from('assets')
     .insert([asset])
@@ -53,7 +53,7 @@ export const createAsset = async (asset: any) => {
   return { data, error };
 };
 
-export const updateAsset = async (id: string, updates: any) => {
+export const updateAsset = async (id: string, updates: Record<string, unknown>) => {
   const { data, error } = await supabase
     .from('assets')
     .update(updates)

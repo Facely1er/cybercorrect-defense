@@ -13,15 +13,13 @@ import {
   Settings, 
   Database, 
   Network, 
-  ArrowRight,
-  Clock,
-  Zap,
+
   Globe
 } from 'lucide-react';
 
 const Features = () => {
   const [activeTab, setActiveTab] = useState('assessment');
-  const navigate = useNavigate();
+
 
   const featureCategories = {
     assessment: {
