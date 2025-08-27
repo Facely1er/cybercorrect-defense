@@ -19,7 +19,7 @@ function validateEnvironment(): EnvironmentConfig {
 
   if (missingVars.length > 0) {
     const message = `Missing required environment variables: ${missingVars.join(', ')}`;
-    console.error(message);
+    console.warn(message + ' - Running in development mode');
     
     if (import.meta.env.NODE_ENV === 'production') {
       throw new Error(message);

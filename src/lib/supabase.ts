@@ -3,14 +3,22 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+// For development, allow missing Supabase config
+let supabase: ReturnType<typeof createClient> | null = null;
+
+if (supabaseUrl && supabaseAnonKey) {
+  supabase = createClient(supabaseUrl, supabaseAnonKey);
+} else {
+  console.warn('Supabase environment variables not found. Running in development mode without backend.');
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export { supabase };
 
 // Auth helpers
 export const signUp = async (email: string, password: string) => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -19,6 +27,9 @@ export const signUp = async (email: string, password: string) => {
 };
 
 export const signIn = async (email: string, password: string) => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
@@ -27,17 +38,26 @@ export const signIn = async (email: string, password: string) => {
 };
 
 export const signOut = async () => {
+  if (!supabase) {
+    return { error: new Error('Supabase not configured') };
+  }
   const { error } = await supabase.auth.signOut();
   return { error };
 };
 
 export const getCurrentUser = async () => {
+  if (!supabase) {
+    return { user: null, error: new Error('Supabase not configured') };
+  }
   const { data: { user }, error } = await supabase.auth.getUser();
   return { user, error };
 };
 
 // Database helpers
 export const getAssets = async () => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase
     .from('assets')
     .select('*')
@@ -46,6 +66,9 @@ export const getAssets = async () => {
 };
 
 export const createAsset = async (asset: Record<string, unknown>) => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase
     .from('assets')
     .insert([asset])
@@ -54,6 +77,9 @@ export const createAsset = async (asset: Record<string, unknown>) => {
 };
 
 export const updateAsset = async (id: string, updates: Record<string, unknown>) => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase
     .from('assets')
     .update(updates)
@@ -63,6 +89,9 @@ export const updateAsset = async (id: string, updates: Record<string, unknown>) 
 };
 
 export const deleteAsset = async (id: string) => {
+  if (!supabase) {
+    return { data: null, error: new Error('Supabase not configured') };
+  }
   const { data, error } = await supabase
     .from('assets')
     .delete()
