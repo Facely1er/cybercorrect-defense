@@ -15,6 +15,7 @@ export default {
       },
       colors: {
         'primary-teal': '#2A6F7F',
+        'primary': '#2A6F7F',
         'secondary-teal': '#3A9CA8',
         'accent-cyan': '#00E5FF',
         'surface': '#FFFFFF',
