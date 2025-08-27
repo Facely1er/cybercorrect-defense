@@ -8,18 +8,15 @@ import {
   Award, 
   CheckCircle,
   Clock,
-  Mail,
   User,
   Settings,
-  Edit,
-  Trash2,
-  Plus
+  Edit
 } from 'lucide-react';
 import { useTeam } from '../../context/TeamContext';
 import { toast } from '../../components/ui/Toaster';
 
 const TeamManagement = () => {
-  const { teamMembers, inviteMembers, currentProject } = useTeam();
+  const { teamMembers, inviteMembers } = useTeam();
   const [showInviteForm, setShowInviteForm] = useState(false);
   const [inviteEmails, setInviteEmails] = useState('');
   const [selectedRole, setSelectedRole] = useState('control_implementer');

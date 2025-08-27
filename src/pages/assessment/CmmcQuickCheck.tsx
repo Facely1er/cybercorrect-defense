@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { Shield, CheckCircle, AlertTriangle, ArrowRight, Clock, Info } from 'lucide-react';
-import { toast } from '../../components/ui/Toaster';
+import { CheckCircle, AlertTriangle, ArrowRight, Clock, Info } from 'lucide-react';
 
 const CmmcQuickCheck = () => {
   const navigate = useNavigate();
@@ -87,7 +86,7 @@ const CmmcQuickCheck = () => {
     const score = Math.round((yesCount / totalQuestions) * 100);
     
     let level1Ready = false;
-    let recommendations = [];
+    const recommendations = [];
     
     if (score >= 90) {
       level1Ready = true;

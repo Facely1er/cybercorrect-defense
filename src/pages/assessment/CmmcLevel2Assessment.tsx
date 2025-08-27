@@ -7,7 +7,6 @@ import {
   ArrowRight, 
   CheckCircle, 
   AlertTriangle, 
-  Shield,
   Clock,
   Info
 } from 'lucide-react';
@@ -18,7 +17,7 @@ const CmmcLevel2Assessment = () => {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get('mode') || 'solo';
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [responses, setResponses] = useState<Record<string, any>>({});
+  const [responses, setResponses] = useState<Record<string, string>>({});
 
   const level2Questions = [
     {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-import { useAuth } from '../../context/AuthContext';
+
 
 interface LayoutProps {
   toggleDarkMode: () => void;
@@ -9,7 +9,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ toggleDarkMode, darkMode }) => {
-  const { user } = useAuth();
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

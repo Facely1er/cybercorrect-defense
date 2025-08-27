@@ -12,13 +12,11 @@ import {
   Moon, 
   Home,
   Target,
-  Users,
   FileText
 } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import { Button } from '../ui/Button';
-import Logo from '../ui/Logo';
 import { useAuth } from '../../context/AuthContext';
 
 interface LandingLayoutProps {
@@ -31,7 +29,6 @@ const LandingLayout = ({ toggleDarkMode, darkMode }: LandingLayoutProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   // Close mobile menu when route changes
   useEffect(() => {

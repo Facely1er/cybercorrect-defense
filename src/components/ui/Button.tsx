@@ -40,12 +40,11 @@ const buttonVariants = cva(
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
   children?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, rounded, asChild = false, children, ...props }, ref) => {
+  ({ className, variant, size, rounded, children, ...props }, ref) => {
     return (
       <button
         className={cn(buttonVariants({ variant, size, rounded, className }))}

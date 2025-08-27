@@ -1,20 +1,16 @@
 import React from 'react';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight,
   Shield,
-  CheckCircle,
   ArrowLeft,
   FileText,
-  Target,
-  Award
+  Target
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Nist800171Guide = () => {
-  const navigate = useNavigate();
 
   const controlFamilies = [
     {

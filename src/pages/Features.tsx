@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent } from '../components/ui/Card';
 import { 
@@ -13,15 +13,11 @@ import {
   Settings, 
   Database, 
   Network, 
-  ArrowRight,
-  Clock,
-  Zap,
   Globe
 } from 'lucide-react';
 
 const Features = () => {
   const [activeTab, setActiveTab] = useState('assessment');
-  const navigate = useNavigate();
 
   const featureCategories = {
     assessment: {

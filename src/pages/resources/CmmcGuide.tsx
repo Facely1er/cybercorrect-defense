@@ -1,25 +1,16 @@
 import React from 'react';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight,
   Shield,
   CheckCircle,
   ArrowLeft,
-  Award,
-  Target,
-  Building,
-  Clock,
-  Info,
-  FileText,
-  Users,
-  BarChart3
+  Target
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CmmcGuide = () => {
-  const navigate = useNavigate();
 
   const cmmcLevels = [
     {

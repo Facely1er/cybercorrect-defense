@@ -9,17 +9,13 @@ import {
   BarChart3, 
   Network, 
   Eye, 
-  Settings, 
   ArrowRight, 
   CheckCircle, 
   Target, 
   FileCheck, 
   AlertTriangle,
   Scale,
-  Lock,
-  Users,
-  BookOpen,
-  Download
+  BookOpen
 } from 'lucide-react';
 
 const Toolkit = () => {

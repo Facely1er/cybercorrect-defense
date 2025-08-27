@@ -1,22 +1,17 @@
 import React from 'react';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { useNavigate } from 'react-router-dom';
 import { 
-  ArrowRight,
-  Shield,
   CheckCircle,
   ArrowLeft,
   Target,
   Users,
   FileText,
-  Clock,
-  Award
+  Clock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ImplementationGuide = () => {
-  const navigate = useNavigate();
 
   const implementationSteps = [
     {

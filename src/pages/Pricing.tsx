@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { CheckCircle, HelpCircle, ArrowRight, Shield, Users, Building, Target } from 'lucide-react';
+import { CheckCircle, ArrowRight, Shield, Users, Building, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Pricing = () => {

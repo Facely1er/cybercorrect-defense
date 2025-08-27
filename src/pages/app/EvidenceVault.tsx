@@ -9,14 +9,10 @@ import {
   FileText, 
   Download,
   Search,
-  Filter,
   Eye,
   Edit,
-  Trash2,
-  Plus,
   Calendar,
   User,
-  Tag,
   Shield
 } from 'lucide-react';
 
@@ -38,9 +34,8 @@ interface EvidenceFile {
 
 const EvidenceVault = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedControl, setSelectedControl] = useState<string>('all');
-  const [selectedType, setSelectedType] = useState<string>('all');
-  const [selectedFile, setSelectedFile] = useState<EvidenceFile | null>(null);
+  const [selectedControl] = useState<string>('all');
+  const [selectedType] = useState<string>('all');
 
   // Mock evidence data
   const evidenceFiles: EvidenceFile[] = [

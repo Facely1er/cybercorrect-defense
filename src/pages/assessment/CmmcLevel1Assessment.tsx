@@ -7,11 +7,9 @@ import {
   ArrowRight, 
   CheckCircle, 
   AlertTriangle, 
-  Shield,
   Clock,
   Info
 } from 'lucide-react';
-import { toast } from '../../components/ui/Toaster';
 import { Link } from 'react-router-dom';
 
 const CmmcLevel1Assessment = () => {
@@ -19,7 +17,7 @@ const CmmcLevel1Assessment = () => {
   const [searchParams] = useSearchParams();
   const mode = searchParams.get('mode') || 'solo';
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [responses, setResponses] = useState<Record<string, any>>({});
+  const [responses, setResponses] = useState<Record<string, string>>({});
 
   const level1Questions = [
     {
