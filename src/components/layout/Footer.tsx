@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
               &copy; {currentYear} CyberCorrect CMMC Platform. All rights reserved.
             </p>
             <div className="flex mt-2 md:mt-0 space-x-4">
-              <Link to="/documentation" className="text-xs text-muted-foreground hover:text-primary">Documentation</Link>
-              <Link to="/about" className="text-xs text-muted-foreground hover:text-primary">Support</Link>
+              <Link to="/documentation" className="text-xs text-muted-foreground hover:text-primary-teal">Documentation</Link>
+              <Link to="/about" className="text-xs text-muted-foreground hover:text-primary-teal">Support</Link>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-4">
-              <Shield className="h-8 w-8 text-primary mr-3" />
+              <Shield className="h-8 w-8 text-primary-teal mr-3" />
               <div>
                 <div className="font-bold text-foreground">CMMC Platform</div>
                 <div className="text-xs text-muted-foreground">by CyberCorrect</div>
@@ -68,10 +68,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-base font-semibold mb-4 text-foreground">CMMC Resources</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/assessment" className="text-muted-foreground hover:text-primary flex items-center"><Target className="h-3.5 w-3.5 mr-2" />CMMC Assessment</Link></li>
-              <li><Link to="/assessment/quick-check" className="text-muted-foreground hover:text-primary flex items-center"><Shield className="h-3.5 w-3.5 mr-2" />Quick Check</Link></li>
-              <li><Link to="/documentation/cmmc-guide" className="text-muted-foreground hover:text-primary flex items-center"><BookOpen className="h-3.5 w-3.5 mr-2" />CMMC 2.0 Guide</Link></li>
-              <li><Link to="/documentation/nist-800-171-guide" className="text-muted-foreground hover:text-primary flex items-center"><FileText className="h-3.5 w-3.5 mr-2" />NIST 800-171 Guide</Link></li>
+              <li><Link to="/assessment" className="text-muted-foreground hover:text-primary-teal flex items-center"><Target className="h-3.5 w-3.5 mr-2" />CMMC Assessment</Link></li>
+              <li><Link to="/assessment/quick-check" className="text-muted-foreground hover:text-primary-teal flex items-center"><Shield className="h-3.5 w-3.5 mr-2" />Quick Check</Link></li>
+              <li><Link to="/documentation/cmmc-guide" className="text-muted-foreground hover:text-primary-teal flex items-center"><BookOpen className="h-3.5 w-3.5 mr-2" />CMMC 2.0 Guide</Link></li>
+              <li><Link to="/documentation/nist-800-171-guide" className="text-muted-foreground hover:text-primary-teal flex items-center"><FileText className="h-3.5 w-3.5 mr-2" />NIST 800-171 Guide</Link></li>
             </ul>
           </div>
           
@@ -79,10 +79,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-base font-semibold mb-4 text-foreground">Platform</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/features" className="text-muted-foreground hover:text-primary">Features</Link></li>
-              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary">Pricing</Link></li>
-              <li><Link to="/demo" className="text-muted-foreground hover:text-primary">Demo</Link></li>
-              <li><Link to="/documentation" className="text-muted-foreground hover:text-primary">Documentation</Link></li>
+              <li><Link to="/features" className="text-muted-foreground hover:text-primary-teal">Features</Link></li>
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-primary-teal">Pricing</Link></li>
+              <li><Link to="/demo" className="text-muted-foreground hover:text-primary-teal">Demo</Link></li>
+              <li><Link to="/documentation" className="text-muted-foreground hover:text-primary-teal">Documentation</Link></li>
             </ul>
           </div>
           
@@ -90,10 +90,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-base font-semibold mb-4 text-foreground">Company</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary flex items-center"><Info className="h-3.5 w-3.5 mr-2" />About</Link></li>
-              <li><a href="mailto:contact@ermits.com" className="text-muted-foreground hover:text-primary flex items-center"><Mail className="h-3.5 w-3.5 mr-2" />Contact</a></li>
-              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-muted-foreground hover:text-primary">Terms of Service</Link></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-primary-teal flex items-center"><Info className="h-3.5 w-3.5 mr-2" />About</Link></li>
+              <li><a href="mailto:contact@ermits.com" className="text-muted-foreground hover:text-primary-teal flex items-center"><Mail className="h-3.5 w-3.5 mr-2" />Contact</a></li>
+              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary-teal">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-muted-foreground hover:text-primary-teal">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
