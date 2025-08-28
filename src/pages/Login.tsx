@@ -19,8 +19,8 @@ const Login = () => {
 
     try {
       await login(email, password);
-      navigate('/app');
       toast.success('Login successful', 'Welcome to CyberCorrect');
+      navigate('/app/dashboard', { replace: true });
     } catch (error) {
       toast.error('Login failed', error instanceof Error ? error.message : 'Invalid credentials');
     } finally {
