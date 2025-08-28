@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { 
@@ -14,8 +14,26 @@ import {
 
 const CmmcAssessmentStart = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [selectedMode, setSelectedMode] = useState<'solo' | 'team' | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<1 | 2 | 3 | null>(null);
+
+  // Handle URL parameters to pre-select level
+  useEffect(() => {
+    const levelParam = searchParams.get('level');
+    const modeParam = searchParams.get('mode');
+    
+    if (levelParam) {
+      const level = parseInt(levelParam);
+      if (level >= 1 && level <= 3) {
+        setSelectedLevel(level as 1 | 2 | 3);
+      }
+    }
+    
+    if (modeParam && (modeParam === 'solo' || modeParam === 'team')) {
+      setSelectedMode(modeParam);
+    }
+  }, [searchParams]);
 
   const assessmentModes = [
     {
