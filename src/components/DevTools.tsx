@@ -8,7 +8,7 @@ const DevTools: React.FC = () => {
   const [showDevTools, setShowDevTools] = useState(false);
 
   // Only show in development
-  if (import.meta.env.PROD) {
+  if (import.meta.env.MODE === 'production') {
     return null;
   }
 
@@ -91,7 +91,7 @@ const DevTools: React.FC = () => {
           
           <div className="mt-4 text-xs text-muted-foreground">
             Environment: {import.meta.env.MODE}<br />
-            Build: {import.meta.env.DEV ? 'Development' : 'Production'}
+            Build: {import.meta.env.MODE === 'development' ? 'Development' : 'Production'}
           </div>
         </CardContent>
       </Card>
