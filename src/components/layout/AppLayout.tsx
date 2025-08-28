@@ -70,6 +70,9 @@ const AppLayout: React.FC<AppLayoutProps> = ({ toggleDarkMode, darkMode }) => {
   ];
 
   const isActive = (href: string) => {
+    if (href === '/app/dashboard') {
+      return location.pathname === '/app' || location.pathname === '/app/' || location.pathname === '/app/dashboard';
+    }
     return location.pathname === href || location.pathname.startsWith(href + '/');
   };
 

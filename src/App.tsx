@@ -5,6 +5,7 @@ import { TeamProvider } from './context/TeamContext';
 import { ProjectProvider } from './context/ProjectContext';
 import { Toaster } from './components/ui/Toaster';
 import ErrorBoundary from './components/ErrorBoundary';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import LandingLayout from './components/layout/LandingLayout';
 import AppLayout from './components/layout/AppLayout';
@@ -99,7 +100,11 @@ const App: React.FC = () => {
                 </Route>
                 
                 {/* Authenticated App Routes */}
-                <Route path="/app" element={<AppLayout toggleDarkMode={toggleDarkMode} darkMode={darkMode} />}>
+                <Route path="/app" element={
+                  <ProtectedRoute>
+                    <AppLayout toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+                  </ProtectedRoute>
+                }>
                   <Route index element={<Dashboard />} />
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="controls" element={<ControlImplementation />} />
